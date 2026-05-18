@@ -11,7 +11,8 @@
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|css|html|md)\"",
     "lint": "eslint --ignore-path .gitignore .",
     "validate": "npm run lint && npm run build",
-    "setup": "npm install && npm run validate"
+    "setup": "npm install && npm run validate",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
@@ -29,6 +30,7 @@
     "eslint-config-cypress": "^0.28.0",
     "eslint-config-kentcdodds": "^14.6.1",
     "file-loader": "^5.0.2",
+    "jest": "^30.4.2",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
     "serve": "^11.2.0",
