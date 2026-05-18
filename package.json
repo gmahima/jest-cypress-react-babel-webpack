@@ -4,7 +4,7 @@
   "description": "See how to configure Jest and Cypress with React, Babel, and Webpack",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode=development",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --mode=development",
     "build": "webpack --mode=production",
     "postbuild": "cp ./public/index.html ./dist/index.html",
     "start": "serve --no-clipboard --single --listen 8080 dist",
