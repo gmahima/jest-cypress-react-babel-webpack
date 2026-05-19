@@ -4,7 +4,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   moduleDirectories: ['node_modules', path.join(__dirname, 'src'), 'shared'],
   moduleNameMapper: {
-    '\\.module\\.css$': '<rootDir>/test/__mocks__/style-mock.js',
+    '\\.module\\.css$': 'identity-obj-proxy', // does the proxy for us
     '\\.css$': '<rootDir>/test/__mocks__/style-mock.js',
   },
 }
