@@ -66,4 +66,4 @@ button.module.css    ✓ (ALSO ends with .css)
 button               ❌ (doesn't end with .css)
 ```
 
-**Why order matters:** Both `\\.module\\.css$` and `\\.css$` match `button.module.css`. Jest uses the first matching rule, so `\\.module\\.css$` must come first to handle CSS modules specifically. If `\\.css$` came first, it would catch CSS modules too and the module rule would never apply.
+**Why order matters:** Both `\\.module\\.css$` and `\\.css$` match `button.module.css`. Jest uses the first matching rule, so `\\.module\\.css$` must come first to handle CSS modules specifically. If `\\.css$` came first, it would catch CSS modules too and the module rule would never apply. 
