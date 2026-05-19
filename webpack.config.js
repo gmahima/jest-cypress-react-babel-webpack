@@ -5,6 +5,7 @@ module.exports = {
   output: {
     path: path.resolve('dist'),
     filename: 'bundle.js',
+    clean: true,
   },
   resolve: {
     modules: ['node_modules', path.join(__dirname, 'src'), 'shared'],
@@ -14,15 +15,20 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /\.module\.css$/,
-        use: [{loader: 'style-loader'}, {loader: 'css-loader'}],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.module\.css$/,
         use: [
-          {loader: 'style-loader'},
+          'style-loader',
           {
             loader: 'css-loader',
-            options: {modules: true, localsConvention: 'camelCaseOnly'},
+            options: {
+              modules: {
+                exportLocalsConvention: 'camel-case-only',
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+            },
           },
         ],
       },
@@ -33,12 +39,15 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        use: 'file-loader',
+        type: 'asset/resource',
       },
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, './public'),
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     historyApiFallback: true,
+    hot: true,
   },
 }

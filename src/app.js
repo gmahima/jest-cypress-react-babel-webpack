@@ -18,5 +18,3 @@ function App() {
 }
 
 export default App
-
-/* eslint import/namespace:0 */

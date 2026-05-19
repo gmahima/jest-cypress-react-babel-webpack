@@ -1,9 +1,9 @@
 {
   "arrowParens": "avoid",
   "bracketSpacing": false,
+  "bracketSameLine": false,
   "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
-  "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
   "printWidth": 80,
   "proseWrap": "always",

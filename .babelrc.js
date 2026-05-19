@@ -1,18 +1,12 @@
-const isProd = String(process.env.NODE_ENV) === 'production'
 const isTest = String(process.env.NODE_ENV) === 'test'
+
 module.exports = {
   presets: [
     ['@babel/preset-env', {modules: isTest ? 'commonjs' : false}],
-    '@babel/preset-react',
     [
-      '@emotion/babel-preset-css-prop',
-      {
-        hoist: isProd,
-        sourceMap: !isProd,
-        autoLabel: !isProd,
-        labelFormat: '[filename]--[local]',
-      },
+      '@babel/preset-react',
+      {runtime: 'automatic', importSource: '@emotion/react'},
     ],
   ],
-  plugins: ['@babel/plugin-transform-runtime'],
+  plugins: ['@emotion/babel-plugin', '@babel/plugin-transform-runtime'],
 }
