@@ -21,6 +21,8 @@ function getScale(node) {
 function AutoScalingText({children}) {
   const nodeRef = React.useRef()
   const scale = getScale(nodeRef.current)
+  console.log(styles)
+  console.log("styles.autoscalingtext", styles.autoScalingText)
   return (
     <div
       className={styles.autoScalingText}
